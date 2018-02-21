@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Lubuntu-default</name>
+    <name>Nightmare-02</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -57,57 +57,57 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Ubuntu Medium</name>
+      <name>Tahoma</name>
       <size>11</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Ubuntu Medium</name>
+      <name>Tahoma</name>
       <size>11</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Ubuntu</name>
+      <name>Tahoma</name>
       <size>11</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Ubuntu</name>
+      <name>Tahoma</name>
       <size>11</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Ubuntu Medium</name>
+      <name>Tahoma</name>
       <size>11</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Ubuntu Medium</name>
+      <name>Tahoma</name>
       <size>11</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
   </theme>
@@ -120,7 +120,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>2</number>
+    <number>1</number>
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
@@ -325,48 +325,36 @@
     <!-- Keybindings for window tiling -->
     <keybind key="W-Left">        # HalfLeftScreen
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <height>100%</height>
-        <width>50%</width>
-      </action>
+      <action name="MoveResizeTo"><x>0</x><y>0</y><height>100%</height><width>50%</width></action>
     </keybind>
     <keybind key="W-Right">        # HalfRightScreen
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
-        <height>100%</height>
-        <width>50%</width>
-      </action>
+      <action name="MoveResizeTo"><x>-0</x><y>0</y><height>100%</height><width>50%</width></action>
     </keybind>
     <keybind key="W-Up">        # HalfUpperScreen
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
+      <!-- <action name="UnmaximizeFull"/> -->
+      <!-- <action name="MoveResizeTo"><x>0</x><y>0</y><width>100%</width><height>50%</height></action> -->
+      <action name="ToggleMaximize"/>
     </keybind>
     <keybind key="W-Down">        # HalfLowerScreen
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
+      <!-- <action name="MoveResizeTo"><x>0</x><y>-0</y><width>100%</width><height>50%</height></action> -->
     </keybind>
-    <!-- Keybindings for running applications on Home + E -->
-    <keybind key="W-e">
+    <!-- Keybindings for running applications on Home + F -->
+    <keybind key="W-f">
+      <!-- <action name="Execute"> -->
+      <!--   <startupnotify> -->
+      <!--     <enabled>true</enabled> -->
+      <!--     <name>File manager</name> -->
+      <!--   </startupnotify> -->
+      <!--   <command>lxsession-default file_manager</command> -->
+      <!-- </action> -->
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
           <name>File manager</name>
         </startupnotify>
-        <command>lxsession-default file_manager</command>
+        <command>openoractivatewindow pcmanfm\.Pcmanfm pcmanfm</command>
       </action>
     </keybind>
     <!-- Keybindings for running Run menu from Lxpanel on Home + R-->
@@ -375,7 +363,6 @@
         <command>rofi -show run</command>
       </action>
     </keybind>
-    
     <keybind key="A-F2">
       <action name="Execute">
         <command>lxsession-default launcher</command>
@@ -405,7 +392,7 @@
     <!-- Launch a terminal on Windows + T-->
     <keybind key="W-T">
       <action name="Execute">
-        <command>lxsession-default terminal</command>
+        <command>openoractivatewindow gnome-terminal-server\.Gnome-terminal gnome-terminal</command>
       </action>
     </keybind>
     <!-- Launch a filemanager on Windows + F-->
@@ -427,24 +414,24 @@
     <!-- Run autorandr to auto load display setup according to puggled monitors -->
     <keybind key="W-Escape">
       <action name="Execute">
-        <command>autorandr</command>
+        <command>autorandr -c</command>
       </action>
     </keybind>
     <!-- Keybinding for Volume management -->
     <keybind key="XF86AudioRaiseVolume">
-        <action name="Execute">
-            <command>amixer -q sset Master 3%+ unmute</command>
-        </action>
+      <action name="Execute">
+        <command>amixer -q sset Master 3%+ unmute</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
-        <action name="Execute">
-            <command>amixer -q sset Master 3%- unmute</command>
-        </action>
+      <action name="Execute">
+        <command>amixer -q sset Master 3%- unmute</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioMute">
-        <action name="Execute">
-            <command>amixer -q sset Master toggle</command>
-        </action>
+      <action name="Execute">
+        <command>amixer -q sset Master toggle</command>
+      </action>
     </keybind>
     <!-- Keybinding for terminal button-->
     <keybind key="XF86WWW">
@@ -838,7 +825,6 @@
     <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
     <file>/usr/share/lubuntu/openbox/menu.xml</file>
     <file>menu.xml</file>
-
     <hideDelay>200</hideDelay>
     <!-- if a press-release lasts longer than this setting (in milliseconds), the
        menu is hidden again -->
@@ -949,6 +935,5 @@
       <maximized>true</maximized>
     </application>
     -->
-
   </applications>
 </openbox_config>
